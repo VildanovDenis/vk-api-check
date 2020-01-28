@@ -1,14 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+import {useSpring, animated} from 'react-spring'
+
+import { SomeArrayItem } from './containers/someArrayItem';
+
 import './App.css';
 
 const someArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
 function App() {
+    const props = useSpring({opacity: 1, from: {opacity: 0}});
+
     return (
-        <div className="App">
+        <div>
             {
-                someArr.map(item => <div key={item}>{item}</div>)
+                someArr.map(item => <SomeArrayItem item={item} key={item}/>)
             }
         </div>
     );
