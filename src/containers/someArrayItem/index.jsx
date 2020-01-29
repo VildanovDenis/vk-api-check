@@ -1,27 +1,38 @@
-import React from 'react';
-import {useSpring, animated, interpolate} from 'react-spring'
+import React, { useState } from 'react';
+import {useSpring, animated} from 'react-spring'
 
 export const SomeArrayItem = ({item}) => {
-    const {o, xyz, color} = useSpring({
-        from: {
-            o: 0,
-            xyz: [0, 0, 0],
-            color: 'red'
-        },
-        o: 1,
-        xyz: [10, 20, 5],
-        color: 'green'
+    const [isFlipped, setIsFlipped] = useState(false);
+    const {transform, opacity} = useSpring({
+        opacity: isFlipped ? 1 : 0,
+        transform: `perspective(600px), rotateX(${isFlipped ? 180 : 0}deg)`,
+        config: {mass: 5, tension: 500, friction: 80}
     });
+
     return (
-        <animated.div
-            style={{
-                // color,
-                background: o.interpolate(o => `rgba(210, 57, 77, ${o})`),
-                transform: xyz.interpolate((x, y, z) => `transform3d(${x}px, ${y}px, ${z}px)`),
-                // border: interpolate([o, color], (o, color) => `${o * 10}px solid ${color}`),
-            }}
+        <div
+            className='card'
+            onClick={() => setIsFlipped(!isFlipped)}
         >
-            {item}
-        </animated.div>
-    )
+            <animated.img
+                className='c'
+                src='/logo512.png'
+                width='250'
+                height='250'
+                style={{
+                    opacity: opacity.interpolate(o => o - 1),
+                    transform,
+                }}/>
+            <animated.span
+                className='c ct'
+                style={{
+                    opacity,
+                    transform: transform.interpolate(t => {console.log(t); return `${t}, rotate(180deg)`})
+                }}
+            >
+                {item}
+                {isFlipped ? 'da' : 'net'}
+            </animated.span>
+        </div>
+    ) 
 }
