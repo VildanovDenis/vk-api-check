@@ -1,17 +1,17 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+
+import { Login } from './containers/login';
+import { Main } from './containers/main';
 
 import './App.css';
 
 function App() {
-    const onClick = () => {
-        if(window.VK) {
-            window.VK.Auth.login(res => console.log(res))
-        }
-    }
     return (
-        <div className='App'>
-            <button type='button' onClick={onClick}>123</button>
-        </div>
+        <Switch>
+            <Route exact path='/' component={Main}/>
+            <Route path='/login' component={Login}/>
+        </Switch>
     );
 }
 
