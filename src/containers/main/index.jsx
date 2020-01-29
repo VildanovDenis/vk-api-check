@@ -4,7 +4,7 @@ export const Main = () => {
     const [state, setState] = useState([]);
     const [inputValue, setInputValue] = useState('');
     useEffect(() => {
-        window.VK.Api.call('friends.get', {v:"5.73", fields: 'first_name, last_name, photo_200_orig'}, function(r) {
+        window.VK.Api.call('friends.get', {v:"5.73", fields: 'first_name, last_name, photo_100'}, function(r) {
             if(r.response) {
                 setState(r.response.items);
             }
@@ -13,11 +13,14 @@ export const Main = () => {
     const renderFriends = () => {
         if (inputValue === '') {
             return state.map((friend, _) => {
-                const {id, first_name, last_name, photo_200_orig} = friend;
+                const {id, first_name, last_name, photo_100} = friend;
                 return (
-                    <a key={id} href={`https://vk.com/id${id}`} target='_blank' rel='noreferrer noopener'>
+                    <a key={id} href={`https://vk.com/id${id}`} target='_blank' rel='noreferrer noopener' className='main__card'>
                         <img
-                            src={photo_200_orig}
+                            src={photo_100}
+                            width='125'
+                            height='125'
+                            title={`Аватар пользователя ${first_name} ${last_name}`}
                             alt={`Аватар пользователя ${first_name} ${last_name}`}/>
                         <p>
                             {`${first_name} ${last_name}`}
@@ -37,11 +40,14 @@ export const Main = () => {
         });
 
         return renderArray.map(friend => {
-            const {id, first_name, last_name, photo_200_orig} = friend;
+            const {id, first_name, last_name, photo_100} = friend;
                 return (
-                    <a key={id} href={`https://vk.com/id${id}`} target='_blank' rel='noreferrer noopener'>
+                    <a key={id} href={`https://vk.com/id${id}`} target='_blank' rel='noreferrer noopener' className='main__card'>
                         <img
-                            src={photo_200_orig}
+                            src={photo_100}
+                            width='125'
+                            height='125'
+                            title={`Аватар пользователя ${first_name} ${last_name}`}
                             alt={`Аватар пользователя ${first_name} ${last_name}`}/>
                         <p>
                             {`${first_name} ${last_name}`}
@@ -51,12 +57,21 @@ export const Main = () => {
         })
     }
     return (
-        <div>
-            <h1>Main page</h1>
-            <input type='text' onChange={e => setInputValue(e.target.value)} disabled={state.length === 0} value={inputValue}/>
-            {
-                renderFriends()
-            }
+        <div className='main'>
+            <h1 className='main__title'>Main page</h1>
+            <div className='main__input-wrapper'>
+                <input
+                    className='main__input'
+                    type='text'
+                    onChange={e => setInputValue(e.target.value)}
+                    disabled={state.length === 0}
+                    value={inputValue}/>
+            </div>
+            <div className='main__cards'>
+                {
+                    renderFriends()
+                }
+            </div>
         </div>
     )
 }
