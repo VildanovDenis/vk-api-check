@@ -1,31 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { auth } from '../../api/auth';
 
 export const Login = () => {
-    const [isVkAvailable, setIsVkAvailable] = useState(null);
-
-    useEffect(() => {
-        if (window.VK) {
-            setTimeout(() => setIsVkAvailable(true), 500);
-        } else {
-            setTimeout(() => setIsVkAvailable(false), 500)
+    const onClick = async () => {
+        try {
+            const a = await auth();
+            console.log(a);
+        } catch(err) {
+            console.log(err);
         }
-    }, []);
-
-    const onClick = () => {
-        window.VK.Auth.login(res => console.log(res));
-    }
-
-    if(isVkAvailable === null) {
-        return <div>Checking is vk auth available</div>
-    }
-
-    if(isVkAvailable === false) {
-        return <div>Oops, something goes wrong, try to reload page</div>
     }
     
     return (
         <div>
-            <button type='button' onClick={onClick}>
+            <button type='button' onClick={onClick} title='login via vk'>
                 login via vk
             </button>
         </div>
