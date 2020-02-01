@@ -11,3 +11,6 @@ export const auth = () => {
         });
     })
 }
+
+// VK.Auth.getSession()
+// VK.Auth.getLoginStatus(console.log)

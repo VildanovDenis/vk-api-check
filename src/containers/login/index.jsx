@@ -5,9 +5,8 @@ export const Login = () => {
     const onClick = async () => {
         try {
             const a = await auth();
-            console.log(a);
         } catch(err) {
-            console.log(err);
+            console.error(err);
         }
     }
     
