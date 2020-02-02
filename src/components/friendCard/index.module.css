@@ -3,7 +3,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 125px;
+    min-width: 125px;
+    width: 100%;
     height: auto;
     will-change: opacity;
     transition: opacity 0.3s;

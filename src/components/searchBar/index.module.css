@@ -2,12 +2,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     margin-bottom: 10px;  
 }
 
 .input {
+    flex-grow: 1;
     padding: 5px;
     margin-right: 5px;
+    margin-bottom: 5px;
     border: 1px solid rgba(0, 51, 102, 1);
     border-radius: 5px;
     font-size: 16px;
@@ -24,6 +27,7 @@
 .button {
     padding: 5px 10px;
     margin-right: 5px;
+    margin-bottom: 5px;
     border: 1px solid rgba(0, 51, 102, 1);
     border-radius: 5px;
     font-size: 16px;
@@ -44,6 +48,7 @@
 .checkboxLabel {
     position: relative;
     padding: 5px 10px 5px 20px;
+    margin-bottom: 5px;
     font-size: 16px;
 }
 .checkboxLabel:hover {

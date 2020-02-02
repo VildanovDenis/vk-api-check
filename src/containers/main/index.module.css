@@ -42,8 +42,8 @@
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 125px);
-    grid-gap: 53px;
+    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+    grid-gap: 40px;
     padding: 15px 0;
 }
 

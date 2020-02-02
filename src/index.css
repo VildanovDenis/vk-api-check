@@ -46,6 +46,7 @@ a:visited {
 
 button {
   color: rgba(0, 51, 102, 1);
+  background-color: transparent;
 }
 
 input {
