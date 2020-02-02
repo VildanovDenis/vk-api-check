@@ -1,0 +1,67 @@
+.main {
+    position: relative;
+    max-width: 860px;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 10px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0px 0px 30px -1px rgba(0,0,0,0.15);
+}
+
+.userWrapper {
+    margin-bottom: 15px;
+}
+
+.userLinkWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    margin: 0 auto;
+    transition: opacity 0.2s;
+    will-change: opacity;
+}
+.userLinkWrapper:hover {
+    opacity: 0.75;
+}
+.userLinkWrapper:active {
+    opacity: 0.9;
+}
+
+.loginedUserAvatar {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+.loginedUserName {
+    margin-bottom: 0;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 125px);
+    grid-gap: 53px;
+    padding: 15px 0;
+}
+
+.logout {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: 1px solid rgba(0, 51, 102, 1);
+    border-radius: 5px;
+    font-size: 12px;
+    transition: opacity 0.3s;
+    will-change: opacity;
+}
+.logout:hover {
+    opacity: 0.7;
+}
+.logout:active {
+    opacity: 0.9;
+}

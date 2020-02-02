@@ -17,7 +17,7 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+/* 
 .card {
   position: relative;
   display: flex;
@@ -92,7 +92,7 @@
   display: block;
   width: 100px;
   height: 100px;
-}
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

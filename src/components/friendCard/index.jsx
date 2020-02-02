@@ -1,15 +1,17 @@
 import React from 'react';
 
+import styles from './index.module.css';
+
 export const FriendCard = ({image, name, surname, id}) => (
-    <a href={`https://vk.com/id${id}`} target='_blank' rel='noreferrer noopener' className='main__card'>
+    <a href={`https://vk.com/id${id}`} target='_blank' rel='noreferrer noopener' className={styles.card}>
         <img
-            className='avatar-circle'
+            className={styles.avatar}
             src={image}
-            width='125'
-            height='125'
+            width='100'
+            height='100'
             title={`Аватар пользователя ${name} ${surname}`}
             alt={`Аватар пользователя ${name} ${surname}`}/>
-        <p className='username'>
+        <p className={styles.userName}>
             {`${name} ${surname}`}
         </p>
     </a>

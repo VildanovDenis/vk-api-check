@@ -1,0 +1,80 @@
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;  
+}
+
+.input {
+    padding: 5px;
+    margin-right: 5px;
+    border: 1px solid rgba(0, 51, 102, 1);
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s;
+    will-change: border-color;
+}
+.input::placeholder {
+    color: rgba(0, 51, 102, 0.7);
+}
+.input:hover {
+    border: 1px solid rgba(0, 51, 102, 0.5);
+}
+
+.button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: 1px solid rgba(0, 51, 102, 1);
+    border-radius: 5px;
+    font-size: 16px;
+    transition: opacity 0.3s;
+    will-change: opacity;
+}
+.button:hover {
+    opacity: 0.7;
+}
+.button:active {
+    opacity: 0.9;
+}
+
+.checkbox {
+    display: none;
+}
+
+.checkboxLabel {
+    position: relative;
+    padding: 5px 10px 5px 20px;
+    font-size: 16px;
+}
+.checkboxLabel:hover {
+    opacity: 0.7;
+}
+.checkboxLabel:active {
+    opacity: 0.9;
+}
+.checkboxLabel::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border: 1px solid rgba(0, 51, 102, 1);
+    border-radius: 2px;
+}
+.checkboxLabel::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: rgba(0, 51, 102, 1);
+    border-radius: 2px;
+    opacity: 0;
+}
+.checkbox:checked + .checkboxLabel::after {
+    opacity: 1;
+}

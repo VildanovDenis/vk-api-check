@@ -20,7 +20,7 @@ export const LoginForm = () => {
     return (
         <div>
             <button type='button' onClick={onClick} title='login via vk'>
-                Войти через вконтакте
+                Войти
             </button>
             {
                 error &&

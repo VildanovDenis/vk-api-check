@@ -6,8 +6,10 @@ import { FriendCard } from '../../components/friendCard';
 
 import { VkService } from '../../services/Vk';
 
+import styles from './index.module.css';
+
 export const ProtectedMain = () => {
-    const [state, setState] = useState([]);
+    const [friends, setFriends] = useState([]);
     const [loginedUser, setLoginedUser] = useState(null);
     const [searchString, setSearchString] = useState('');
     const routerHistory = useHistory();
@@ -29,7 +31,7 @@ export const ProtectedMain = () => {
             const method = 'friends.get';
             const params = {fields: 'first_name, last_name, photo_100'};
             VkService.callApi(method, params)
-                .then(res => setState(res.response.items))
+                .then(res => setFriends(res.response.items))
                 .catch(err => console.error(err))
         }
     }, [loginedUser]);
@@ -41,7 +43,7 @@ export const ProtectedMain = () => {
     );
 
     const renderFilteredFriends = () => {
-        const renderArray = state.filter(friend => {
+        const renderArray = friends.filter(friend => {
             const {first_name, last_name} = friend;
             const friendName = `${first_name} ${last_name}`.toLowerCase();
             const re = new RegExp(searchString.toLowerCase(), 'g');
@@ -65,7 +67,7 @@ export const ProtectedMain = () => {
 
     const renderFriends = () => {
         if (searchString === '') {
-            return state.map(friend => {
+            return friends.map(friend => {
                 const {id, first_name, last_name, photo_100} = friend;
                 return (
                     <FriendCard
@@ -82,34 +84,36 @@ export const ProtectedMain = () => {
     }
 
     return (
-        <div className='main'>
-            <h1 className='main__title'>My friends</h1>
-            <button type='button' onClick={onLogoutClick}>Выйти</button>
-            <SearchBar setSearchString={setSearchString}/>
+        <div className={styles.main}>
+            <button type='button' onClick={onLogoutClick} className={styles.logout}>Выйти</button>
             {
                 loginedUser &&
-                <div>
+                <div className={styles.userWrapper}>
                     <a
                         href={`https://vk.com/id${loginedUser.id}`}
                         target='_blank'
                         rel='noreferrer noopener'
-                        className='main__card'>
+                        className={styles.userLinkWrapper}>
                         <img
+                            className={styles.loginedUserAvatar}
                             src={loginedUser.photo_200}
                             alt={`Аватар пользователя ${loginedUser.first_name}`}
                             width='200'
                             height='200'/>
-                        <p>
+                        <p className={styles.loginedUserName}>
                             {`${loginedUser.first_name} ${loginedUser.last_name}`}
                         </p>
                     </a>
                 </div>
             }
             {
+                friends.length > 0 && <SearchBar setSearchString={setSearchString}/>
+            }
+            {
                 searchString &&
                 <p>Результаты поиска по запросу: "{searchString}"</p>
             }
-            <div className='main__cards'>
+            <div className={styles.cards}>
                 {
                     renderFriends()
                 }
