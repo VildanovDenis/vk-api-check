@@ -5,7 +5,10 @@ export const SearchBar = ({setSearchString}) => {
     const [isDynamic, setIsDynamic] = useState(false);
     const onToggleCheckbox = () => setIsDynamic(!isDynamic);
     const onSearchButtonClick = () => setSearchString(inputValue);
-    const onClearSearchClick = () => setSearchString('');
+    const onClearSearchClick = () => {
+        setSearchString('');
+        setInputValue('');
+    }
 
     const onChange = e => {
         setInputValue(e.target.value);

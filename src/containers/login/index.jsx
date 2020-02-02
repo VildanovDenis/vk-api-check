@@ -1,20 +1,16 @@
 import React from 'react';
-import { auth } from '../../api/auth';
+
+import { LoginForm } from './LoginForm';
+
+import { VkService } from '../../services/Vk';
+import { Link } from 'react-router-dom';
 
 export const Login = () => {
-    const onClick = async () => {
-        try {
-            const a = await auth();
-        } catch(err) {
-            console.error(err);
-        }
+    const session = VkService.getSession();
+
+    if (session === null) {
+        return <LoginForm/>
     }
-    
-    return (
-        <div>
-            <button type='button' onClick={onClick} title='login via vk'>
-                login via vk
-            </button>
-        </div>
-    )
+
+    return <div>Вы уже авторизованы, вернитесь на <Link to='/'>главную</Link></div>
 }

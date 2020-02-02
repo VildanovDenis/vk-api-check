@@ -6,6 +6,9 @@ import * as serviceWorker from './serviceWorker';
 import App from './App';
 
 import './index.css';
+import { VkService } from './services/Vk';
+
+VkService.subscribeVkInit(7299169);
 
 ReactDOM.render(
     <BrowserRouter>

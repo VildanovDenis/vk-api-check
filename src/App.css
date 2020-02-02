@@ -87,6 +87,13 @@
   text-align: center;
 }
 
+.spinner {
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
