@@ -35,7 +35,6 @@ function App() {
                 console.error(err);
                 setVkFetchStatus(FETCH_STATUS.error)
             });
-        // eslint-disable-next-line no-undef
     }, []);
 
     /** Проверяет авторизацию */

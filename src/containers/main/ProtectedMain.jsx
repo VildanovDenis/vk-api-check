@@ -47,9 +47,7 @@ export const ProtectedMain = () => {
             const {first_name, last_name} = friend;
             const friendName = `${first_name} ${last_name}`.toLowerCase();
             const re = new RegExp(searchString.toLowerCase(), 'g');
-            if (re.test(friendName)) {
-                return friend;
-            }
+            return re.test(friendName);
         });
 
         return renderArray.map(friend => {
