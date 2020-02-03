@@ -11,7 +11,7 @@ import { VkService } from './services/Vk';
 VkService.subscribeVkInit(7299169);
 
 ReactDOM.render(
-    <BrowserRouter>
+    <BrowserRouter basename='/vk-api-check'>
         <App />
     </BrowserRouter>
     , document.getElementById('root')
