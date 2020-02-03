@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/vk-api-check/static/css/main.4376c0f2.chunk.css",
-    "main.js": "/vk-api-check/static/js/main.ab513f4d.chunk.js",
-    "main.js.map": "/vk-api-check/static/js/main.ab513f4d.chunk.js.map",
+    "main.js": "/vk-api-check/static/js/main.5ee4f04e.chunk.js",
+    "main.js.map": "/vk-api-check/static/js/main.5ee4f04e.chunk.js.map",
     "runtime-main.js": "/vk-api-check/static/js/runtime-main.1ee311e1.js",
     "runtime-main.js.map": "/vk-api-check/static/js/runtime-main.1ee311e1.js.map",
     "static/js/2.23cda42d.chunk.js": "/vk-api-check/static/js/2.23cda42d.chunk.js",
     "static/js/2.23cda42d.chunk.js.map": "/vk-api-check/static/js/2.23cda42d.chunk.js.map",
     "index.html": "/vk-api-check/index.html",
-    "precache-manifest.7e60b9b6e149e546444cb192002187d4.js": "/vk-api-check/precache-manifest.7e60b9b6e149e546444cb192002187d4.js",
+    "precache-manifest.064a8b38c4d76201550eee096f6682b6.js": "/vk-api-check/precache-manifest.064a8b38c4d76201550eee096f6682b6.js",
     "service-worker.js": "/vk-api-check/service-worker.js",
     "static/css/main.4376c0f2.chunk.css.map": "/vk-api-check/static/css/main.4376c0f2.chunk.css.map",
     "static/js/2.23cda42d.chunk.js.LICENSE": "/vk-api-check/static/js/2.23cda42d.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.1ee311e1.js",
     "static/js/2.23cda42d.chunk.js",
     "static/css/main.4376c0f2.chunk.css",
-    "static/js/main.ab513f4d.chunk.js"
+    "static/js/main.5ee4f04e.chunk.js"
   ]
 }
