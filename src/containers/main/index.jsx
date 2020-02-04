@@ -8,7 +8,7 @@ import { ProtectedMain } from './ProtectedMain';
 export const Main = () => {
     const session = VkService.getSession();
     if (session === null) {
-        return <div>Пожалуйста <Link>войдите</Link>, чтобы продолжить</div>
+        return <div>Пожалуйста <Link to='/login'><b>войдите</b></Link>, чтобы продолжить</div>
     }
     
     return <ProtectedMain/>
