@@ -11,7 +11,7 @@ import { VkService } from './services/Vk';
 VkService.subscribeVkInit(7299169);
 
 ReactDOM.render(
-    <HashRouter basename='/vk-api-check'>
+    <HashRouter basename='/'>
         <App />
     </HashRouter>
     , document.getElementById('root')
