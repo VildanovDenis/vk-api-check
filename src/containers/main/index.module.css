@@ -10,7 +10,7 @@
 }
 
 .userWrapper {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .userLinkWrapper {
@@ -18,7 +18,7 @@
     flex-direction: column;
     align-items: center;
     width: 200px;
-    margin: 0 auto;
+    margin: 0 auto 15px;
     transition: opacity 0.2s;
     will-change: opacity;
 }
@@ -64,4 +64,9 @@
 }
 .logout:active {
     opacity: 0.9;
+}
+
+.friendsCount {
+    margin-bottom: 0;
+    text-align: center;
 }

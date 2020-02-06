@@ -10,6 +10,7 @@ import styles from './index.module.css';
 
 export const ProtectedMain = () => {
     const [friends, setFriends] = useState([]);
+    const [friendsCount, setFriendsCount] = useState(null);
     const [loginedUser, setLoginedUser] = useState(null);
     const [searchString, setSearchString] = useState('');
     const routerHistory = useHistory();
@@ -31,7 +32,10 @@ export const ProtectedMain = () => {
             const method = 'friends.get';
             const params = {fields: 'first_name, last_name, photo_100'};
             VkService.callApi(method, params)
-                .then(res => setFriends(res.response.items))
+                .then(res => {
+                    setFriends(res.response.items);
+                    setFriendsCount(res.response.count);
+                })
                 .catch(err => console.error(err))
         }
     }, [loginedUser]);
@@ -102,6 +106,12 @@ export const ProtectedMain = () => {
                             {`${loginedUser.first_name} ${loginedUser.last_name}`}
                         </p>
                     </a>
+                    {
+                        friendsCount !== null &&
+                        <p className={styles.friendsCount}>
+                            Всего друзей - {friendsCount}
+                        </p>
+                    }
                 </div>
             }
             {
