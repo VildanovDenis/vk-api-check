@@ -13,7 +13,7 @@ VkService.subscribeVkInit(7299169);
 const history = createBrowserHistory();
 
 ReactDOM.render(
-    <Router history={history}>
+    <Router basename='/vk-api-check'>
         <App />
     </Router>
     , document.getElementById('root')
