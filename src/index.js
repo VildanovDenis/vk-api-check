@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import { createBrowserHistory } from 'history';
 
@@ -13,9 +13,9 @@ VkService.subscribeVkInit(7299169);
 const history = createBrowserHistory();
 
 ReactDOM.render(
-    <BrowserRouter history={history}>
+    <Router history={history}>
         <App />
-    </BrowserRouter>
+    </Router>
     , document.getElementById('root')
 );
 
